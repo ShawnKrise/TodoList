@@ -1,0 +1,12 @@
+.instruction {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-evenly;
+    width: 20rem;
+    font-size: 1.5em;
+    margin: 3rem auto;
+    border-radius: 0.5rem;
+    font-weight: bold; 
+    color: white;
+}
