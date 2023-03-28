@@ -31,14 +31,14 @@ function TodoList() {
 
 
 
-
+    //create a const for removing todos from array
     const removeTodo = id => {
         const removeArr = [...todos].filter(todo => todo.id !== id)
 
         setTodos(removeArr);
     }
 
-
+    //create a const for completing todos from array
     const completeTodo = id => {
         let updatedTodos = todos.map(todo => {
             if (todo.id === id) {
@@ -50,10 +50,15 @@ function TodoList() {
     }
 
   return (
+    //set Title, add TodoForm 
+    //add Todo with properties equal to consts
     <div>
         <h1>Create a Daily Todo List:</h1>
         <TodoForm onSubmit={addTodo} />
-        <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo}/>
+        <Todo todos={todos} 
+        completeTodo={completeTodo} 
+        removeTodo={removeTodo} 
+        updateTodo={updateTodo}/>
     </div>
   )
 }
