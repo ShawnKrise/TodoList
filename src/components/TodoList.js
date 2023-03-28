@@ -2,9 +2,12 @@ import React, {useState} from 'react';
 import Todo from './Todo';
 import TodoForm from './TodoForm';
 
+
+//JS file for TodoList
 function TodoList() {
     const [todos, setTodos] = useState([]);
 
+    //create const for Adding Todos 
     const addTodo = todo => {
         if(!todo.text || /^\s*$/.test(todo.text)) {
         return  
@@ -15,11 +18,13 @@ function TodoList() {
         setTodos(newTodos)
     };
 
+    //create a const for updating Todos
+    //if new value text return
     const updateTodo = (todoId, newValue) => {
         if(!newValue.text || /^\s*$/.test(newValue.text)) {
             return  
             }
-
+    //set Todos to previous map item. item id is equal to todoId THEN newValue else use item
         setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item))
         );
     };
